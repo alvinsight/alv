@@ -3,7 +3,7 @@ const Rnd = {
     return Math.random() * (max - min) + min;
   },
 
-  randomInt : (min,max) => {
+  randomInt : (min, max) => {
     return (Math.random() * (max - min) + min) | 0;
   },
 

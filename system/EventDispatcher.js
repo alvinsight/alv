@@ -5,14 +5,14 @@ class EventDispatcher {
     this.eventHash = {};
   }
 
-  add(eventName,callback,callbackScope) {
+  add(eventName, callback, callbackScope) {
 
     let signal = this.getSignal(eventName);
 
     signal.add(callback,callbackScope)
   }
 
-  dispatch(eventName,...args) {
+  dispatch(eventName, ...args) {
 
     let signal = this.getSignal(eventName);
 
