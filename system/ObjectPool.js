@@ -4,7 +4,7 @@ class ObjectPool{
     this.uid = 1;
   }
 
-  get(ClassName,args) {
+  get(ClassName, ...args) {
     if(!ClassName.__poolId){
       ClassName.__poolId = this.uid++;
     };
@@ -15,7 +15,7 @@ class ObjectPool{
     if(!classPool)
     {
       this.hash[ClassName.__poolId] = [];
-      return new ClassName(args);
+      return new ClassName(...args);
     } // there is a pool in the hash, with some objects in it, use it as expected
     else if(classPool.length > 0)
     {
@@ -24,7 +24,7 @@ class ObjectPool{
       return object;
     } // there is a pool in the hash but it's empty (length <= 0)
     else{
-      return new ClassName(args);
+      return new ClassName(...args);
     }
   }
 
