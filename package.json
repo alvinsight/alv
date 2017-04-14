@@ -1,0 +1,19 @@
+{
+  "name": "alv",
+  "version": "0.0.1",
+  "description": "\"A set of handy reusable utilities geared towards creative coding\"",
+  "main": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvinsight/alv.git"
+  },
+  "author": "Alvin",
+  "license": "CC-BY-NC-3.0",
+  "bugs": {
+    "url": "https://github.com/alvinsight/alv/issues"
+  },
+  "homepage": "https://github.com/alvinsight/alv#readme"
+}
