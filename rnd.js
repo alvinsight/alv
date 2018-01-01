@@ -1,4 +1,10 @@
 export const random = (min, max) => {
+  if (typeof min === 'undefined') {
+    return Math.random();
+  } else if (typeof max === 'undefined') {
+    return Math.random() * min;
+  }
+
   return Math.random() * (max - min) + min;
 };
 
