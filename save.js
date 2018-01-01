@@ -15,6 +15,6 @@ export const saveString = (str, filename) => {
 };
 
 export const saveBinary = (data, filename) => {
-  const blob = new Blob([output], { type: 'application/octet-stream' });
+  const blob = new Blob([data], { type: 'application/octet-stream' });
   saveBlob(blob, filename);
 };
