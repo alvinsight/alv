@@ -15,7 +15,7 @@ const saveBlob = (blob, filename) => {
 };
 
 export const saveString = (str, filename = 'file.txt') => {
-  const blob = new Blob([output], { type: 'text/plain' });
+  const blob = new Blob([str], { type: 'text/plain' });
   saveBlob(blob, filename);
 };
 
