@@ -14,18 +14,17 @@ const saveBlob = (blob, filename) => {
   link.click();
 };
 
-export const saveString = (str, filename) => {
-  const output = JSON.stringify(str, null, 2);
+export const saveString = (str, filename = 'file.txt') => {
   const blob = new Blob([output], { type: 'text/plain' });
   saveBlob(blob, filename);
 };
 
-export const saveBinary = (data, filename) => {
+export const saveBinary = (data, filename = 'file.bin') => {
   const blob = new Blob([data], { type: 'application/octet-stream' });
   saveBlob(blob, filename);
 };
 
-export const saveCanvas = (canvas, filename) => {
+export const saveCanvas = (canvas, filename = 'canvas.png') => {
   const dataURL = canvas.toDataURL('image/png');
   const blob = dataURLToBlob(dataURL);
   saveBlob(blob, filename);
