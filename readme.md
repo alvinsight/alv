@@ -1,4 +1,4 @@
-# hdny
+# hndy
 
 A set of handy reusable utilities geared towards creative coding
 
