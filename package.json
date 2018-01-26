@@ -1,12 +1,12 @@
 {
-  "name": "alv",
+  "name": "hdny",
   "version": "0.0.1",
   "description":
     "A set of handy reusable utilities geared towards creative coding",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alvinsight/alv"
+    "url": "https://github.com/alvinsight/hdny"
   },
   "browserify": {
     "transform": [
@@ -21,9 +21,9 @@
   "author": "Alvin",
   "license": "CC-BY-NC-4.0",
   "bugs": {
-    "url": "https://github.com/alvinsight/alv/issues"
+    "url": "https://github.com/alvinsight/hndy/issues"
   },
-  "homepage": "https://github.com/alvinsight/alv#readme",
+  "homepage": "https://github.com/alvinsight/hndy#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babelify": "^8.0.0"
