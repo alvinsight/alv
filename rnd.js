@@ -17,7 +17,7 @@ export const pick = array => {
 };
 
 // looks like it's from here: https://stackoverflow.com/a/5408843
-export const pointInSphere = (radius = 5) => {
+export const pointInSphere = (radius = 1) => {
   const phi = Math.random() * (2 * Math.PI);
   const costheta = Math.random() * 2 - 1;
   const u = Math.random();
@@ -26,14 +26,14 @@ export const pointInSphere = (radius = 5) => {
   // Math.cbrt is part of ES2015
   const r = radius * Math.cbrt(u);
 
-  let v = [];
-  v[0] = r * Math.sin(theta) * Math.cos(phi);
-  v[1] = r * Math.sin(theta) * Math.sin(phi);
-  v[2] = r * Math.cos(theta);
+  let vertex = [];
+  vertex[0] = r * Math.sin(theta) * Math.cos(phi);
+  vertex[1] = r * Math.sin(theta) * Math.sin(phi);
+  vertex[2] = r * Math.cos(theta);
   return v;
 };
 
-export const pointAroundSphere = (radius = 5) => {
+export const pointAroundSphere = (radius = 1) => {
   let vertex = [];
 
   const theta = random(0, Math.PI * 2);
