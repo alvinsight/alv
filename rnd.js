@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
 export const random = (min, max) => {
   if (typeof min === 'undefined') {
     return Math.random();
@@ -8,15 +14,30 @@ export const random = (min, max) => {
   return Math.random() * (max - min) + min;
 };
 
+/**
+ *
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
 export const randomInt = (min, max) => {
   return (Math.random() * (max - min) + min) | 0;
 };
 
+/**
+ *
+ * @param {number} array
+ * @returns {any}
+ */
 export const pick = array => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// looks like it's from here: https://stackoverflow.com/a/5408843
+/**
+ * It looks like the original implementation is from here: https://stackoverflow.com/a/5408843
+ * @param {number} radius
+ * @returns {number[]}
+ */
 export const pointInSphere = (radius = 1) => {
   const phi = Math.random() * (2 * Math.PI);
   const costheta = Math.random() * 2 - 1;
@@ -33,6 +54,11 @@ export const pointInSphere = (radius = 1) => {
   return v;
 };
 
+/**
+ *
+ * @param {number} radius
+ * @returns {number[]}
+ */
 export const pointAroundSphere = (radius = 1) => {
   let vertex = [];
 

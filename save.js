@@ -1,8 +1,13 @@
 const link = document.createElement('a');
 link.style.display = 'none';
-document.body.appendChild(link); // Firefox workaround, see #6594
+document.body.appendChild(link);
 
-const saveBlob = (blob, filename) => {
+/**
+ *
+ * @param {Blob} blob
+ * @param {String} filename
+ */
+const saveBlob = (blob, filename = 'blob.bin') => {
   link.href = URL.createObjectURL(blob);
   link.download = filename;
   link.onclick = () => {
@@ -14,20 +19,37 @@ const saveBlob = (blob, filename) => {
   link.click();
 };
 
+/**
+ * Saves a string in a .txt file
+ * @param  {String} str
+ * @param  {String} [filename='file.txt']
+ */
 export const saveString = (str, filename = 'file.txt') => {
   const blob = new Blob([str], { type: 'text/plain' });
   saveBlob(blob, filename);
 };
 
+/**
+ * saves a binary data in a .bin file
+ * @param  {any} data
+ * @param  {String} [filename='file.bin']
+ */
 export const saveBinary = (data, filename = 'file.bin') => {
   const blob = new Blob([data], { type: 'application/octet-stream' });
   saveBlob(blob, filename);
 };
 
+/**
+ * Turns a canvas element into a png file and saves it
+ * @param  {HTMLCanvasElement} canvas
+ * @param  {String} [filename='canvas.png']
+ * @return {DOMString} A data URL representation of the canvas
+ */
 export const saveCanvas = (canvas, filename = 'canvas.png') => {
   const dataURL = canvas.toDataURL('image/png');
   const blob = dataURLToBlob(dataURL);
   saveBlob(blob, filename);
+  return dataURL;
 };
 
 function dataURLToBlob(dataURL) {
