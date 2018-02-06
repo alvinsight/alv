@@ -1,43 +1,40 @@
-class ObjectPool{
+class ObjectPool {
   constructor() {
     this.hash = {};
     this.uid = 1;
   }
 
   get(ClassName, ...args) {
-    if(!ClassName.__poolId){
+    if (!ClassName.__poolId) {
       ClassName.__poolId = this.uid++;
-    };
+    }
 
     var classPool = this.hash[ClassName.__poolId];
 
     // the hash doesn't have a pool for this class
-    if(!classPool)
-    {
+    if (!classPool) {
       this.hash[ClassName.__poolId] = [];
       return new ClassName(...args);
-    } // there is a pool in the hash, with some objects in it, use it as expected
-    else if(classPool.length > 0)
-    {
+    } else if (classPool.length > 0) {
+      // there is a pool in the hash, with some objects in it, use it as expected
       var object = classPool.pop();
       object.__pooled = false;
       return object;
-    } // there is a pool in the hash but it's empty (length <= 0)
-    else{
+    } else {
+      // there is a pool in the hash but it's empty (length <= 0)
       return new ClassName(...args);
     }
   }
 
   put(object) {
-    if(object.__pooled) return;
+    if (object.__pooled) return;
 
-    if(!object.constructor.__poolId){
+    if (!object.constructor.__poolId) {
       console.error("The object wasn't created by the object pool", object);
     }
 
     var classPool = this.hash[object.constructor.__poolId];
-    if(!classPool)
-    {
+    if (!classPool) {
       this.hash[object.constructor.__poolId] = [];
     }
 

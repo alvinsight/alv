@@ -19,26 +19,26 @@ class Ticker {
     cancelAnimationFrame(this.rafId);
   }
 
-  add(callback,scope) {
-    if(this.callbacks.indexOf(callback) === -1)
-    {
+  add(callback, scope) {
+    if (this.callbacks.indexOf(callback) === -1) {
       this.callbacks.push(callback);
       this.scopes.push(scope);
     }
   }
 
-  remove(callback,scope) {
+  remove(callback, scope) {
     let index = this.callbacks.indexOf(callback);
 
-    if(index !== -1);
-    {
-      this.callbacks.splice(index,1);
-      this.scopes.splice(index,1);
+    if (index !== -1) {
+      this.callbacks.splice(index, 1);
+      this.scopes.splice(index, 1);
     }
   }
 
   update() {
-    let currentTime = window.performance ? window.performance.now() : Date.now();
+    let currentTime = window.performance
+      ? window.performance.now()
+      : Date.now();
 
     this.deltaTime = currentTime - this.lastTime;
     this.deltaTime *= 0.06;
