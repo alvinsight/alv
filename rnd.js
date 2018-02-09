@@ -20,7 +20,7 @@ export const randomInt = (min, max) => {
 
 /**
  *
- * @param {number} array
+ * @param {any[]} array
  * @returns {any}
  */
 export const pick = array => {
