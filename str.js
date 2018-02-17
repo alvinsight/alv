@@ -18,6 +18,7 @@ export const slugify = str => {
     .trim()
     .toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/\'+/g, '-') // Replace apostrophes with -
     .replace(/[^\w\-]+/g, '') // Remove all non-word chars
     .replace(/\-\-+/g, '-'); // Replace multiple - with single -
 };
