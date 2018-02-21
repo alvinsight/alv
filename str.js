@@ -38,3 +38,17 @@ export const addLeadingZeros = (number, amount) => {
   }
   return str;
 };
+
+export const queryStringParameters = url => {
+  const qs = url.substring(url.indexOf('?') + 1).split('&');
+  let result = new Map();
+
+  for (let i = 0; i < qs.length; i++) {
+    const param = qs[i].split('=');
+    const key = param[0];
+    const value = decodeURIComponent(param[1]);
+    result.set(key, value);
+  }
+
+  return result;
+};

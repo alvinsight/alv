@@ -9,7 +9,8 @@
     "url": "https://github.com/alvinsight/hdny"
   },
   "scripts": {
-    "test": "tape -r babel-register tests/**/*.js | tap-spec"
+    "test": "tape -r babel-register tests/**/*.js | tap-spec",
+    "test:watch": "nodemon -q -x 'npm test'"
   },
   "browserify": {
     "transform": [
