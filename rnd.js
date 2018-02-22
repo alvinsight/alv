@@ -45,7 +45,7 @@ export const pointInSphere = (radius = 1) => {
   vertex[0] = r * Math.sin(theta) * Math.cos(phi);
   vertex[1] = r * Math.sin(theta) * Math.sin(phi);
   vertex[2] = r * Math.cos(theta);
-  return v;
+  return vertex;
 };
 
 /**
