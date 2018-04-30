@@ -1,17 +1,12 @@
-import { lerp, clamp } from '../mate';
-
-const test = require('tape');
+import { lerp, clamp, map } from '../mate';
+import test from 'tape';
 
 test('Mate, Math-related utils', t => {
-  test('Lerp', t => {
-    t.equal(lerp(50, 100, 0.5), 75);
-    t.end();
-  });
+  t.equal(lerp(50, 100, 0.5), 75, 'Lerp');
 
-  test('Constrain a value using clamp()', t => {
-    t.equal(clamp(3, 0, 1), 1);
-    t.end();
-  });
+  t.equal(clamp(3, 0, 1), 1, 'Constrain a value using clamp()');
+
+  t.equal(map(50, 0, 100, 0, 25), 12.5, 'Map one range to another');
 
   t.end();
 });

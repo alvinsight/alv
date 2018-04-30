@@ -1,5 +1,5 @@
 import { addLeadingZeros, slugify, queryStringParameters } from '../str';
-const test = require('tape');
+import test from 'tape';
 
 test('String utils', t => {
   test('Add leading zeros', t => {
