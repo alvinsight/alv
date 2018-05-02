@@ -16,17 +16,11 @@ test('String utils', t => {
 
   test('Extract values from a query string', t => {
     let url = 'http://www.myurl.com/index.html?debug=true&slideNumber=3';
-    t.equal(
-      queryStringParameters(url).has('debug'),
-      true,
-      'Can check if a parmeter is part of the query'
-    );
+    let params = queryStringParameters(url);
 
-    t.equal(
-      queryStringParameters(url).get('slideNumber'),
-      '3',
-      "Extracts a parameter's value"
-    );
+    t.true(params.has('debug'), 'Can check if a parmeter is part of the query');
+
+    t.equal(params.get('slideNumber'), '3', "Extracts a parameter's value");
     t.end();
   });
 
