@@ -1,26 +1,22 @@
 {
   "name": "hndy",
   "version": "0.0.1",
-  "description":
-    "A set of handy reusable utilities geared towards creative coding",
-  "main": "index.js",
+  "description": "A set of handy reusable utilities geared towards creative coding",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/alvinsight/hdny"
   },
+  "files": [
+    "./dist/",
+    "package.json",
+    "readme.md"
+  ],
   "scripts": {
+    "prepublish": "babel src --out-dir ./dist",
+    "docs": "npm run prepublish && ./node_modules/.bin/esdoc",
     "test": "tape -r babel-register tests/**/*.js | tap-spec",
     "test:watch": "nodemon -q -x 'npm test'"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": ["es2015"]
-        }
-      ]
-    ]
   },
   "author": "Alvin",
   "license": "CC-BY-NC-4.0",
@@ -29,12 +25,15 @@
   },
   "homepage": "https://github.com/alvinsight/hndy#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-register": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "babelify": "^8.0.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jsdoc-to-markdown": "^4.0.1"
+  }
 }

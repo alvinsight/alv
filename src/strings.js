@@ -38,7 +38,11 @@ export const addLeadingZeros = (number, amount) => {
   }
   return str;
 };
-
+/**
+ * Extracts the query string parameters from a URL into a Map
+ * @param {string} url the URL to extract the query string from
+ * @return {Map} the parameters and their values
+ */
 export const queryStringParameters = url => {
   const qs = url.substring(url.indexOf('?') + 1).split('&');
   let result = new Map();

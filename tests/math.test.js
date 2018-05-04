@@ -1,4 +1,4 @@
-import { lerp, clamp, map } from '../mate';
+import { lerp, clamp, map } from '../src/math';
 import test from 'tape';
 
 test('Mate, Math-related utils', t => {

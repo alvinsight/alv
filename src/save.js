@@ -1,9 +1,11 @@
+/** @module random */
+
 const link = document.createElement('a');
 link.style.display = 'none';
 document.body.appendChild(link);
 
 /**
- *
+ * Saves a Blob as a binary file
  * @param {Blob} blob
  * @param {String} filename
  */
@@ -20,7 +22,7 @@ const saveBlob = (blob, filename = 'blob.bin') => {
 };
 
 /**
- * Saves a string in a .txt file
+ * Saves a string in a [.txt] file
  * @param  {String} str
  * @param  {String} [filename='file.txt']
  */
@@ -30,7 +32,7 @@ export const saveString = (str, filename = 'file.txt') => {
 };
 
 /**
- * saves a binary data in a .bin file
+ * saves a binary data in a [.bin] file
  * @param  {any} data
  * @param  {String} [filename='file.bin']
  */

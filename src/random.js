@@ -1,3 +1,5 @@
+/** @module random */
+
 /**
  *
  * @param {number} min
