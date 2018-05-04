@@ -6,9 +6,9 @@
  * @param {number} max
  * @returns {number}
  */
-export const random = (min = 0, max = 1) => {
+export function random(min = 0, max = 1) {
   return Math.random() * (max - min) + min;
-};
+}
 
 /**
  *
@@ -16,25 +16,25 @@ export const random = (min = 0, max = 1) => {
  * @param {number} max
  * @returns {number}
  */
-export const randomInt = (min, max) => {
+export function randomInt(min, max) {
   return (Math.random() * (max - min) + min) | 0;
-};
+}
 
 /**
  *
  * @param {any[]} array
  * @returns {any}
  */
-export const pick = array => {
+export function pick(array) {
   return array[Math.floor(Math.random() * array.length)];
-};
+}
 
 /**
  * It looks like the original implementation is from here: https://stackoverflow.com/a/5408843
  * @param {number} radius
  * @returns {number[]}
  */
-export const pointInSphere = (radius = 1) => {
+export function pointInSphere(radius = 1) {
   const phi = Math.random() * (2 * Math.PI);
   const costheta = Math.random() * 2 - 1;
   const u = Math.random();
@@ -48,14 +48,14 @@ export const pointInSphere = (radius = 1) => {
   vertex[1] = r * Math.sin(theta) * Math.sin(phi);
   vertex[2] = r * Math.cos(theta);
   return vertex;
-};
+}
 
 /**
  *
  * @param {number} radius
  * @returns {number[]}
  */
-export const pointAroundSphere = (radius = 1) => {
+export function pointAroundSphere(radius = 1) {
   let vertex = [];
 
   const theta = random(0, Math.PI * 2);
@@ -66,4 +66,4 @@ export const pointAroundSphere = (radius = 1) => {
   vertex[2] = radius * Math.cos(theta);
 
   return vertex;
-};
+}

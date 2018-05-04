@@ -1,3 +1,5 @@
+/** @module strings */
+
 /**
  * Capitalises the first word of a string, so "can't stop" becomes "Can't stop"
  * @param {string} str - the target string

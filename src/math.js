@@ -7,11 +7,11 @@
  * @param {number} max
  * @returns {number}
  */
-export const clamp = (value, min, max) => {
+export function clamp(value, min, max) {
   if (value < min) return min;
   if (value > max) return max;
   return value;
-};
+}
 
 /**
  *
@@ -20,9 +20,9 @@ export const clamp = (value, min, max) => {
  * @param {number} amt
  * @returns {number}
  */
-export const lerp = (start, stop, amt) => {
+export function lerp(start, stop, amt) {
   return amt * (stop - start) + start;
-};
+}
 
 /**
  *
@@ -33,8 +33,8 @@ export const lerp = (start, stop, amt) => {
  * @param {number} outputMax
  * @returns {number}
  */
-export const map = (n, inputMin, inputMax, outputMin, outputMax) => {
+export function map(n, inputMin, inputMax, outputMin, outputMax) {
   return (
     (n - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin
   );
-};
+}
