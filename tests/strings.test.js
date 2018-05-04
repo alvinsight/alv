@@ -1,4 +1,4 @@
-import { addLeadingZeros, slugify, queryStringParameters } from '../str';
+import { addLeadingZeros, slugify, queryStringParameters } from '../src/strings';
 import test from 'tape';
 
 test('String utils', t => {
