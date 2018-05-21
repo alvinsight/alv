@@ -9,6 +9,8 @@
 <dd></dd>
 <dt><a href="#module_strings">strings</a></dt>
 <dd></dd>
+<dt><a href="#module_EventDispatcher">EventDispatcher</a></dt>
+<dd></dd>
 </dl>
 
 <a name="module_math"></a>
@@ -226,20 +228,20 @@ Saves a Blob as a binary file
 ## strings
 
 * [strings](#module_strings)
-    * [.capitalize](#module_strings.capitalize) ⇒ <code>string</code>
-    * [.slugify](#module_strings.slugify) ⇒ <code>string</code>
-    * [.addLeadingZeros](#module_strings.addLeadingZeros) ⇒ <code>string</code>
-    * [.queryStringParameters](#module_strings.queryStringParameters) ⇒ <code>Map</code>
+    * [.capitalize(str)](#module_strings.capitalize) ⇒ <code>string</code>
+    * [.slugify(str)](#module_strings.slugify) ⇒ <code>string</code>
+    * [.addLeadingZeros(number, amount)](#module_strings.addLeadingZeros) ⇒ <code>string</code>
+    * [.queryStringParameters(url)](#module_strings.queryStringParameters) ⇒ <code>Map</code>
 
 
 * * *
 
 <a name="module_strings.capitalize"></a>
 
-### strings.capitalize ⇒ <code>string</code>
+### strings.capitalize(str) ⇒ <code>string</code>
 Capitalises the first word of a string, so "can't stop" becomes "Can't stop"
 
-**Kind**: static constant of [<code>strings</code>](#module_strings)  
+**Kind**: static method of [<code>strings</code>](#module_strings)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -250,11 +252,11 @@ Capitalises the first word of a string, so "can't stop" becomes "Can't stop"
 
 <a name="module_strings.slugify"></a>
 
-### strings.slugify ⇒ <code>string</code>
+### strings.slugify(str) ⇒ <code>string</code>
 Turns a string into a normalised format that can be used for slugs and ids
 so "I'm Yours" becomes "i-m-yours"
 
-**Kind**: static constant of [<code>strings</code>](#module_strings)  
+**Kind**: static method of [<code>strings</code>](#module_strings)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -265,10 +267,10 @@ so "I'm Yours" becomes "i-m-yours"
 
 <a name="module_strings.addLeadingZeros"></a>
 
-### strings.addLeadingZeros ⇒ <code>string</code>
+### strings.addLeadingZeros(number, amount) ⇒ <code>string</code>
 Converts a number to a string then adds leading zeros to it.
 
-**Kind**: static constant of [<code>strings</code>](#module_strings)  
+**Kind**: static method of [<code>strings</code>](#module_strings)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -280,16 +282,22 @@ Converts a number to a string then adds leading zeros to it.
 
 <a name="module_strings.queryStringParameters"></a>
 
-### strings.queryStringParameters ⇒ <code>Map</code>
+### strings.queryStringParameters(url) ⇒ <code>Map</code>
 Extracts the query string parameters from a URL into a Map
 
-**Kind**: static constant of [<code>strings</code>](#module_strings)  
+**Kind**: static method of [<code>strings</code>](#module_strings)  
 **Returns**: <code>Map</code> - the parameters and their values  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | url | <code>string</code> | the URL to extract the query string from |
 
+
+* * *
+
+<a name="module_EventDispatcher"></a>
+
+## EventDispatcher
 
 * * *
 

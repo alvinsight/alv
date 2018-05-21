@@ -7,14 +7,10 @@
     "type": "git",
     "url": "https://github.com/alvinsight/hdny"
   },
-  "files": [
-    "./dist/",
-    "package.json",
-    "readme.md"
-  ],
+  "files": ["./dist/", "package.json", "readme.md"],
   "scripts": {
     "prepublish": "babel src --out-dir ./dist",
-    "docs": "npm run prepublish && ./node_modules/.bin/esdoc",
+    "docs": "node scripts/docs.js",
     "test": "tape -r babel-register tests/**/*.js | tap-spec",
     "test:watch": "nodemon -q -x 'npm test'"
   },
@@ -34,6 +30,7 @@
     "tape": "^4.9.0"
   },
   "dependencies": {
-    "jsdoc-to-markdown": "^4.0.1"
+    "jsdoc-to-markdown": "^4.0.1",
+    "signals": "^1.0.0"
   }
 }
