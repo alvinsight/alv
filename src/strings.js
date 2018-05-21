@@ -5,9 +5,9 @@
  * @param {string} str - the target string
  * @returns {string}
  */
-export const capitalize = str => {
+export function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
-};
+}
 
 /**
  * Turns a string into a normalised format that can be used for slugs and ids
@@ -15,7 +15,7 @@ export const capitalize = str => {
  * @param {string} str - the target string
  * @returns {string}
  */
-export const slugify = str => {
+export function slugify(str) {
   return str
     .trim()
     .toLowerCase()
@@ -23,7 +23,7 @@ export const slugify = str => {
     .replace(/\'+/g, '-') // Replace apostrophes with -
     .replace(/[^\w\-]+/g, '') // Remove all non-word chars
     .replace(/\-\-+/g, '-'); // Replace multiple - with single -
-};
+}
 
 /**
  * Converts a number to a string then adds leading zeros to it.
@@ -31,7 +31,7 @@ export const slugify = str => {
  * @param {number} amount - the maximum number of leading zeros, so 2 will change 1 to "001"
  * @returns {string}
  */
-export const addLeadingZeros = (number, amount) => {
+export function addLeadingZeros(number, amount) {
   let str = number.toString();
   const steps = amount + 1 - str.length;
 
@@ -39,13 +39,13 @@ export const addLeadingZeros = (number, amount) => {
     str = '0' + str;
   }
   return str;
-};
+}
 /**
  * Extracts the query string parameters from a URL into a Map
  * @param {string} url the URL to extract the query string from
  * @return {Map} the parameters and their values
  */
-export const queryStringParameters = url => {
+export function queryStringParameters(url) {
   const qs = url.substring(url.indexOf('?') + 1).split('&');
   let result = new Map();
 
@@ -57,4 +57,4 @@ export const queryStringParameters = url => {
   }
 
   return result;
-};
+}
