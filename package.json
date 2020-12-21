@@ -8,31 +8,26 @@
     "url": "https://github.com/alvinsight/hdny"
   },
   "files": [
-    "./dist/",
+    "./src/",
     "package.json",
     "readme.md"
   ],
   "scripts": {
-    "prepublishOnly": "babel src --out-dir ./dist",
     "docs": "node scripts/docs.js",
-    "test": "tape -r babel-register tests/**/*.js | tap-spec",
+    "test": "tape -r esm tests/**/*.js | tap-spec",
     "test:watch": "nodemon -q -x 'npm test'"
   },
   "author": "Alvin",
   "license": "CC-BY-NC-4.0",
   "bugs": {
-    "url": "https://github.com/alvinsight/hndy/issues"
+    "url": "https://github.com/alvinometric/hndy/issues"
   },
-  "homepage": "https://github.com/alvinsight/hndy#readme",
+  "homepage": "https://github.com/alvinometric/hndy#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "babelify": "^8.0.0",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.9.0",
-    "jsdoc-to-markdown": "^4.0.1"
+    "esm": "^3.2.25",
+    "jsdoc-to-markdown": "^6.0.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.1"
   },
   "dependencies": {
     "signals": "^1.0.0"
